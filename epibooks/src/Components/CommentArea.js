@@ -15,14 +15,13 @@ const CommentArea = ({ asin }) => {
     
 
     useEffect(() => {
-        setError(false);
         if (asin) {  // if asin is not null, fetch the data
             fetchData()  // fetchData is a function that fetches the data
         }
     }, [asin]// this means that the effect will be triggered only once when the component mounts});
     )
 
-    const fetchData = () => {
+    const fetchData = () => {        
         setIsLoading(true);
         fetch(`https://striveschool-api.herokuapp.com/api/comments/${asin}`, {
             method: "GET",
@@ -40,6 +39,7 @@ const CommentArea = ({ asin }) => {
                 if (data.length > 0) {
                     setComments(data);
                     setIsLoading(false);
+                    setError(false);
                 } else {
                     setComments(data);
                     setIsLoading(false);

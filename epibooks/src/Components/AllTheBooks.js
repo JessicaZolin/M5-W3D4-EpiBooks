@@ -38,7 +38,7 @@ function AllTheBooks({ book, searchBook }) {
         </Col>
 
         <Col md={3}>                                                                  {/* display the comment area in the right side */}
-          <CommentArea asin={selected} />
+          <CommentArea asin={selected}/>
         </Col>
       </Row>
 
