@@ -15,6 +15,7 @@ const CommentArea = ({ asin }) => {
     
 
     useEffect(() => {
+        setError(false);
         if (asin) {  // if asin is not null, fetch the data
             fetchData()  // fetchData is a function that fetches the data
         }
